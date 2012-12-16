@@ -1,0 +1,72 @@
+<html>
+<head>
+
+  <script>
+
+    window.setInterval("flashBackgroundColor()",100);
+
+    colorSelector = 1;
+
+    function flashBackgroundColor() {
+
+      if(colorSelector == 1) {
+      	// document.bgColor="FFFF00"; colorSelector=2;
+      }
+      else {
+      	// document.bgColor="FF0000"; colorSelector=1;
+      }
+    }
+
+    var screenWidth = window.innerWidth - 400;
+
+    function moveImage() {
+      var movingImage = document.getElementById('cat');
+      var imagePostion = parseInt(movingImage.style.left);
+
+      var timingInterval = setTimeout("moveImage()");
+
+      imagePostion = imagePostion + 1;
+
+      movingImage.style.left = imagePostion + "px";
+
+      if (imagePostion > screenWidth) {
+        movingImage.style.left = 0;
+      }
+    }
+    </script>
+  </head>
+
+  <body>
+    <!-- <h1><center>WELCOME TO MY HOMEPAGE</center></h1> -->
+
+    <div>
+      <img onClick="moveImage()" src="images/cat-0.jpg" id="cat" style="position:relative;top:0px;left:0px;">
+    </div>
+
+    <div>
+      <img onClick="moveImage()" src="images/cat-1.jpg" id="cat-1" style="position:relative;top:20px;left:0px;">
+    </div>
+
+
+
+    <!-- <p id = "p1"  onclick = "moveImage()">clicky</p> -->
+
+
+
+<!--     <table>
+      <td>
+        <tr><img src="images/cat-0.jpg"></img></tr>
+        <tr><img src="images/cat-1.jpg"></img></tr>
+      </td>
+      <td>
+        <tr><img src="images/pug-0.jpg"></img></tr>
+        <tr><img src="images/cat-2.jpg"></img></tr>
+      </td>
+      <td>
+        <tr><img src="images/cat-3.jpg"></img></tr>
+        <tr><img src="images/cat-4.jpg"></img></tr>
+      </td>
+    </table> -->
+
+  </body>
+</html>
